@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ping Bot</title>
+  <style>
+    #ping {
+      font-size: 24px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ping Bot</h1>
+  <p>Response Time: <span id="ping">-</span> ms</p>
+
+  <script>
+    function ping() {
+      var start = performance.now();
+      // Replace this with the actual request to the bot
+      setTimeout(function() {
+        var end = performance.now();
+        var pingTime = Math.round(end - start);
+        document.getElementById("ping").textContent = pingTime;
+      }, 0);
+    }
+
+    setInterval(ping, 100); // Refresh interval in milliseconds
+  </script>
+</body>
+</html>
